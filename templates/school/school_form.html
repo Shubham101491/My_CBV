@@ -1,0 +1,20 @@
+{% extends "school/school_base.html" %}
+{% block content %}
+
+<h1>
+    {% if not form.instance.pk %}
+    Create School
+    {% else %}
+    Update School
+    {% endif %}
+</h1>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+
+    <input type="submit" class="btn btn-primary" value="submit">
+</form>
+
+
+{% endblock %}
